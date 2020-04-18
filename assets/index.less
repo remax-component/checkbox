@@ -1,0 +1,120 @@
+@checkboxWarpPrefixCls: rmc-checkbox;
+@checkboxInnerPrefixCls: ~"@{checkboxWarpPrefixCls}-inner";
+
+/* Default state */
+.@{checkboxWarpPrefixCls} {
+  white-space: nowrap;
+  outline: none;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  line-height: 1;
+  vertical-align: middle;
+
+  &-inner {
+    &:after {
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+      position: absolute;
+      left: 8rpx;
+      top: 2rpx;
+      display: table;
+      width: 10rpx;
+      height: 16rpx;
+      border: 4rpx solid #ffffff;
+      border-top: 0;
+      border-left: 0;
+      content: " ";
+      animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+      animation-duration: 0.3s;
+      animation-name: amCheckboxOut;
+    }
+
+    position: relative;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 28rpx;
+    height: 28rpx;
+    border-width: 2rpx;
+    border-style: solid;
+    border-radius: 6rpx;
+    border-color: #d9d9d9;
+    background-color: #ffffff;
+    transition: border-color 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+      background-color 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  }
+}
+
+/* Checked state */
+.@{checkboxWarpPrefixCls}-checked {
+  &:hover {
+    .@{checkboxInnerPrefixCls} {
+      border-color: #3dbcf6;
+    }
+  }
+
+  .@{checkboxInnerPrefixCls} {
+    border-color: #3dbcf6;
+    background-color: #3dbcf6;
+
+    &:after {
+      transform: rotate(45deg);
+      position: absolute;
+      left: 8rpx;
+      top: 2rpx;
+      display: table;
+      width: 10rpx;
+      height: 16rpx;
+      border: 4rpx solid #ffffff;
+      border-top: 0;
+      border-left: 0;
+      content: " ";
+      animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+      animation-duration: 0.3s;
+      animation-name: amCheckboxOut;
+    }
+  }
+}
+
+.@{checkboxWarpPrefixCls}-disabled {
+  &.@{checkboxWarpPrefixCls}-checked {
+    &:hover {
+      .@{checkboxInnerPrefixCls} {
+        border-color: #d9d9d9;
+      }
+    }
+
+    .@{checkboxInnerPrefixCls} {
+      background-color: #f3f3f3;
+      border-color: #d9d9d9;
+
+      &:after {
+        animation-name: none;
+        border-color: #cccccc;
+      }
+    }
+  }
+}
+
+@keyframes amCheckboxIn {
+  0% {
+    opacity: 0;
+    transform-origin: 50% 50%;
+    transform: scale(0, 0) rotate(45deg);
+  }
+  100% {
+    opacity: 1;
+    transform-origin: 50% 50%;
+    transform: scale(1, 1) rotate(45deg);
+  }
+}
+
+@keyframes amCheckboxOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
