@@ -15,12 +15,12 @@
   },
   "dependencies": {
     "react": "^16.8.6",
-    "remax": "^1.21.1",
+    "react-dom": "^16.13.1",
+    "remax": "^2.0.0-alpha.4",
     "rimraf": "^2.6.3"
   },
   "devDependencies": {
     "chokidar": "^2.1.8",
-    "cross-env": "^6.0.3",
-    "remax-cli": "^1.21.1"
+    "cross-env": "^6.0.3"
   }
 }

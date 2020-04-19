@@ -5,9 +5,9 @@ Remax 的单选框组件
 ## 安装
 
 ```sh
-yarn add rmc-checkbox
+yarn add @remax-component/checkbox
 # 或者
-npm i rmc-checkbox
+npm i @remax-component/checkbox
 ```
 
 ## 使用

@@ -1,5 +1,5 @@
 {
-  "name": "remax-checkbox",
+  "name": "@remax-component/checkbox",
   "version": "0.0.1",
   "description": "checkbox UI for Remax",
   "main": "dist/index.js",
