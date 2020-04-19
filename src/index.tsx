@@ -32,6 +32,9 @@ export interface CheckboxProps<T> {
   children?: ReactNode;
 }
 
+/**
+ * 选择框
+ */
 const Checkbox = <T,>({
   id,
   prefixCls = "rmc-checkbox",

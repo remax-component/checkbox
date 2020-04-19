@@ -1,7 +1,7 @@
 import * as React from "react";
 import { View } from "remax/one";
-import Checkbox from "../../../../dist/index";
-import "../../../../dist/assets/index.css";
+import Checkbox from "@remax-component/checkbox";
+import "@remax-component/checkbox/dist/assets/index.css";
 
 export default () => {
   return (

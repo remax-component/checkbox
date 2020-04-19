@@ -2,14 +2,14 @@
   "name": "@remax-component/checkbox",
   "version": "0.0.1",
   "description": "checkbox UI for Remax",
-  "main": "dist/index.js",
+  "main": "dist/index.jsx",
   "author": "IronLu233",
   "license": "MIT",
   "private": false,
   "scripts": {
     "build": "gulp build",
     "watch:component": "gulp watch",
-    "watch:example": "cd example & yarn dev alipay",
+    "watch:example": "cd example && yarn dev web",
     "start": "run-p watch:*"
   },
   "devDependencies": {
@@ -20,6 +20,7 @@
     "eslint-config-prettier": "^6.10.1",
     "gulp": "^4.0.2",
     "gulp-cli": "^2.2.0",
+    "gulp-copy": "^4.0.1",
     "gulp-less": "^4.0.1",
     "gulp-typescript": "^6.0.0-alpha.1",
     "husky": "^4.2.5",
@@ -28,7 +29,7 @@
     "postcss": "^7.0.27",
     "prettier": "^2.0.4",
     "react": "^16.13.1",
-    "remax": "^1.21.1",
+    "remax": "^2.0.0-alpha.4",
     "typescript": "^3.8.3"
   },
   "dependencies": {
