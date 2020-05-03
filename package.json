@@ -7,7 +7,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "prepublishOnly": "yarn build",
+    "prepublishOnly": "yarn build:component",
     "build": "yarn build:component && yarn build:example:web",
     "build:component": "gulp build",
     "build:example:web": "cd example && yarn build web",
