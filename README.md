@@ -42,7 +42,7 @@ export default () => {
 
 ```sh
 yarn install
-yarn start
+yarn watch:example:web
 ```
 
 最后用支付宝工具打开`example/dist/alipay`目录。
@@ -51,7 +51,7 @@ yarn start
 
 ## TODO
 
-- [ ] 单元测试
+- [x] 单元测试
 - [ ] 网页端 Demo
 
 ## License
