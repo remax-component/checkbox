@@ -47,7 +47,7 @@ exports.web = {
         // tab 标题
         title: "标题",
         // tab 对应页面路由
-        url: "pages/index/index",
+        url: "/pages/index/index",
         // tab 显示的图片地址
         image: "图片地址",
         // tab 选中后的显示的图片地址

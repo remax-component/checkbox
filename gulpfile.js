@@ -3,30 +3,26 @@ const ts = require("gulp-typescript");
 const less = require("gulp-less");
 const copy = require("gulp-copy");
 
-function TypeScript(cb) {
-  src("src/**/*.tsx")
-    .pipe(ts.createProject("tsconfig.json")())
-    .pipe(dest("dist/"));
+const tsProject = ts.createProject("tsconfig.json");
 
-  cb();
+function TypeScript() {
+  return src("src/**/*.tsx").pipe(tsProject()).pipe(dest("dist/"));
 }
 
-function Less(cb) {
-  src("assets/**/*.less").pipe(less()).pipe(dest("dist/assets"));
-
-  cb();
+function Less() {
+  return src("assets/**/*.less").pipe(less()).pipe(dest("dist/assets"));
 }
 
-function Copy(cb) {
+function Copy() {
   return src(["package.json", "dist/**/*"]).pipe(
     copy("example/node_modules/@remax-component/checkbox")
   );
 }
 
-exports.build = parallel(TypeScript, Less);
+exports.build = series(parallel(TypeScript, Less), Copy);
 
 exports.watch = function () {
   series(exports.build, Copy)();
-  watch("src/**/*.tsx", TypeScript);
-  watch("assets/**/*.less", Less);
+  watch("src/**/*.tsx", series(TypeScript, Copy));
+  watch("assets/**/*.less", series(Less, Copy));
 };

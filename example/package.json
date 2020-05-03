@@ -16,7 +16,7 @@
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.13.1",
-    "remax": "^2.0.0-alpha.4",
+    "remax": "^2.0.0-alpha.17",
     "rimraf": "^2.6.3"
   },
   "devDependencies": {

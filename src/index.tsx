@@ -1,5 +1,5 @@
 import React, { ReactNode, useState, useCallback, ReactElement } from "react";
-import { View, Input, TapEvent } from "remax/one";
+import { View, Input, TapEvent, Label } from "remax/one";
 import clsx from "clsx";
 
 export interface CheckboxEvent<T> extends Omit<TapEvent, "target"> {
@@ -48,7 +48,8 @@ const Checkbox = <T,>({
   children,
   defaultChecked = false,
   style,
-}: CheckboxProps<T>): ReactElement => {
+  ...restProps
+}: CheckboxProps<T> & Record<string, string | number>): ReactElement => {
   const [stateChecked, setStateChecked] = useState(defaultChecked);
 
   const checked = propsChecked !== undefined ? propsChecked : stateChecked;
@@ -77,7 +78,13 @@ const Checkbox = <T,>({
   });
 
   return (
-    <View style={style} className={classString} onTap={handleClick} id={id}>
+    <View
+      style={style}
+      className={classString}
+      onTap={handleClick}
+      id={id}
+      {...restProps}
+    >
       <Input
         name={name}
         value={(value as any) as string}
@@ -85,7 +92,7 @@ const Checkbox = <T,>({
       />
       <View className={`${prefixCls}-inner`} />
       &nbsp;
-      {children}
+      <Label>{children}</Label>
     </View>
   );
 };

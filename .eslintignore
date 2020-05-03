@@ -8,3 +8,8 @@ coverage
 example
 
 gulpfile.js
+
+__tests__
+
+jest.config.js
+babel.config.js
