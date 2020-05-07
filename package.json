@@ -1,11 +1,14 @@
 {
   "name": "@remax-component/checkbox",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "checkbox UI for Remax",
   "main": "dist/index.jsx",
   "author": "IronLu233",
   "license": "MIT",
-  "private": false,
+  "repository": {
+    "url": "https://github.com/remax-component/checkbox",
+    "type": "git"
+  },
   "scripts": {
     "prepublishOnly": "yarn build:component",
     "build": "yarn build:component && yarn build:example:web",
@@ -13,7 +16,11 @@
     "build:example:web": "cd example && yarn build web",
     "watch:component": "gulp watch",
     "watch:example:web": "cd example && yarn dev web",
-    "start:web": "yarn build:example && watch:example:web"
+    "start:web": "yarn build && watch:example:web",
+    "test": "yarn build && jest"
+  },
+  "peerDependencies": {
+    "remax": "^2.0.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.9.6",
@@ -45,7 +52,7 @@
     "puppeteer": "^3.0.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "remax": "^2.0.0-alpha.17",
+    "remax": "^2.0.1",
     "typescript": "^3.8.3"
   },
   "dependencies": {
