@@ -7,14 +7,14 @@ export default () => {
   return (
     <View style={{ display: "flex", flexDirection: "column", padding: "20PX" }}>
       <Checkbox
-        id="works"
+        data-test-id="works"
         onChange={(e) => console.log(e)}
         style={{ marginBottom: "20PX" }}
       >
         基本
       </Checkbox>
       <Checkbox
-        id="control-mode-checked"
+        data-test-id="control-mode-checked"
         checked
         style={{ marginBottom: "20PX" }}
       >
@@ -22,7 +22,7 @@ export default () => {
       </Checkbox>
 
       <Checkbox
-        id="control-mode-unchecked"
+        data-test-id="control-mode-unchecked"
         checked={false}
         style={{ marginBottom: "20PX" }}
       >
@@ -30,14 +30,14 @@ export default () => {
       </Checkbox>
 
       <Checkbox
-        id="default-checked"
+        data-test-id="default-checked"
         defaultChecked
         style={{ marginBottom: "20PX" }}
       >
         默认选中的Checkbox
       </Checkbox>
       <Checkbox
-        id="disabled"
+        data-test-id="disabled"
         defaultChecked
         disabled
         style={{ marginBottom: "20PX" }}
@@ -46,7 +46,7 @@ export default () => {
       </Checkbox>
       <Checkbox
         name="my-checkbox"
-        id="has-name"
+        data-test-id="has-name"
         defaultChecked
         style={{ marginBottom: "20PX" }}
       >
